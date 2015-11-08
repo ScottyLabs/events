@@ -76,16 +76,17 @@ validate existing tokens.
 
 It exports the following functions:
 
-### `auth.init(users, config)` 
+### `auth.init(config, setUser)` 
 - Brief: Initializes the library on its first invocation.
-- Param: `users` An object to interact with the user database.
 - Param: `config` A general configuration object.
+- Param: `setUser` A function that takes the user to set in the database and
+  sets it.
 - Return: A Promise that evaluates when the library successfully initializes.
 
 ### `auth.verify(token)`
 - Brief: Verifies the token is a valid Events JWT.
 - Param: `token` The token to validate.
-- Return: `Boolean` If the auth is valid.
+- Return: `Number` The token's auth level.
 
 ### `auth.exchange(token)`
 - Brief: Exchanges a valid SL auth token for an Events token.
