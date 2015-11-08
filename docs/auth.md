@@ -61,14 +61,14 @@ If we're not logged in, runs the login sequence.
 - Param: `None`
 - Returns: `None`
 
-### `auth.onPLChange(fn)`
+### `auth.init(onPLChange)`
 - Brief: Set the function to be called whenever the privilege level changes.
-- Param: `fn` The function to be called when the privilege level changes.
+- Param: `onPLChange` The function to be called when the privilege level changes.
 - Returns: `None`
 
 Should be used by the `data` library to initialize a data refresh when the auth
 level changes.  The function will receive one parameter: the new privilege
-level.
+level.  Will likely just be `data.sync`.
 
 ## The `auth` Server Side Library
 The `auth` server side library should be used to generate new JWT tokens and
@@ -76,11 +76,13 @@ validate existing tokens.
 
 It exports the following functions:
 
-### `auth.init(config, setUser)` 
+### `auth.init(config, setUser, getUser)`
 - Brief: Initializes the library on its first invocation.
 - Param: `config` A general configuration object.
 - Param: `setUser` A function that takes the user to set in the database and
   sets it.
+- Param: `getUser` A function that takes a userID and returns its privilege
+  level, if one is set.
 - Return: A Promise that evaluates when the library successfully initializes.
 
 ### `auth.verify(token)`
