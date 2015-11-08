@@ -57,7 +57,7 @@ If we're not logged in, runs the login sequence.
 
 ### `auth.logout`
 - Brief: Drops the cached auth state, effectively logging out the user and
-  setting our privilege level to `P3`.
+  setting our privilege level to `P0`.
 - Param: `None`
 - Returns: `None`
 
