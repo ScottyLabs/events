@@ -30,7 +30,7 @@ Update the dataset for a single event, filtered by the JWT auth level.
 ### GET `/data/event/:eventID/hash`
 Returns the hash for a single event's dataset, filtered by the JWT auth level.
 
-## The `data` Cient Side Library
+## The `data` Client Side Library
 The `data` client side library should be used in order to wrap API requests to
 the server, as it handles things like caching and passively checking for data
 updates.  It should check data isn't stale every time we sync up the data and
